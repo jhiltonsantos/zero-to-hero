@@ -1,6 +1,7 @@
 # aulafirebase
 
 A new Flutter application.
+MultiDexEnable true [Active]
 
 ## Getting Started
 
