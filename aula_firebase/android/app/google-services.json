@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "146376816607",
+    "firebase_url": "https://studyingflutter.firebaseio.com",
+    "project_id": "studyingflutter",
+    "storage_bucket": "studyingflutter.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:146376816607:android:f878080a232e635ae7f66a",
+        "android_client_info": {
+          "package_name": "br.com.jhiltonsantos.aulafirebase"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "146376816607-9ni9mn4c26auah1gn5osoajn2g8erodq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCXybsExQMeKfHbXbFr1XHijV3Ydwj5MUE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "146376816607-9ni9mn4c26auah1gn5osoajn2g8erodq.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
