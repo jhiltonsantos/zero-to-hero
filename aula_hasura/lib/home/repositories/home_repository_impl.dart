@@ -24,15 +24,18 @@ class HomeRepositoryImpl implements HomeRepository {
   }
 
   @override
-  Stream streamToDo() {
+  Stream<List<Map>> streamToDo() {
     return _client.subscription('''
-    query {
+    subscription {
       posts {
         id_posts
         name
         photo_perfil
       }
     }
-    ''');
+    ''').map((event) => (event['data']['posts']
+            as List)
+        .map((e) => {"name": e['name']})
+        .toList());
   }
 }
