@@ -1,0 +1,1 @@
+const BD_HASURA = 'https://aulahasuraflutter.herokuapp.com/v1/graphql';
