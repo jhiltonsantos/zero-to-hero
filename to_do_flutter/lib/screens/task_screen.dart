@@ -3,12 +3,27 @@ import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
 import 'package:flutter/rendering.dart';
 import 'package:todoflutter/constants.dart';
+import 'package:todoflutter/screens/add_task_screen.dart';
+import 'package:todoflutter/widgets/task_list.dart';
 
 class TaskScreen extends StatelessWidget {
+  Widget buildButton(BuildContext context) {
+    return Container(
+      decoration: BoxDecoration(
+        color: colorPrimary,
+        borderRadius: BorderRadius.only(
+          topLeft: Radius.circular(30.0),
+          topRight: Radius.circular(30.0),
+        ),
+      ),
+      child: Center(
+        child: Text('Test'),
+      ),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
-    List<Color> gradient = [Color(0xFF6975F0), Colors.greenAccent];
-
     return Scaffold(
       floatingActionButton: FloatingActionButton(
         elevation: 5.0,
@@ -16,9 +31,17 @@ class TaskScreen extends StatelessWidget {
         child: Icon(
           Icons.add,
           color: Colors.black,
-          size: 40.0,
+          size: 35.0,
         ),
-        onPressed: () {},
+        onPressed: () {
+          showModalBottomSheet(
+              context: context,
+              isScrollControlled: true,
+              builder: (context) => SingleChildScrollView(
+                  padding: EdgeInsets.only(
+                      bottom: MediaQuery.of(context).viewInsets.bottom),
+                  child: Container(child: AddTaskScreen())));
+        },
       ),
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -75,31 +98,6 @@ class TaskScreen extends StatelessWidget {
   }
 }
 
-class TasksList extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return ListView(
-      children: <Widget>[
-        TaskTile(title: 'A'),
-        TaskTile(title: 'B'),
-        TaskTile(title: 'C'),
-      ],
-    );
-  }
-}
 
-class TaskTile extends StatelessWidget {
-  const TaskTile({this.title});
 
-  final String title;
 
-  @override
-  Widget build(BuildContext context) {
-    return ListTile(
-      title: Text(title),
-      trailing: Checkbox(
-        value: false,
-      ),
-    );
-  }
-}
