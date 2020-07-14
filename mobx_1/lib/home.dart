@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:mobx_1/controller.dart';
@@ -23,23 +24,38 @@ class _MyHomePageState extends State<MyHomePage> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            Text(
-              'You have pushed the button this many times:',
+            TextField(
+              decoration: InputDecoration(labelText: 'Name'),
+              onChanged: controller.changeName,
+            ),
+            SizedBox(
+              height: 15.0,
+            ),
+            TextField(
+              decoration: InputDecoration(labelText: 'LastName'),
+              onChanged: controller.changeLastName,
+            ),
+            SizedBox(
+              height: 30.0,
             ),
             Observer(
               builder: (_) {
-                return Text(
-                  '${controller.counter}',
-                  style: Theme.of(context).textTheme.headline4,
-                );
+                return Text(controller.completedName);
               },
             ),
+//            Observer(
+//              builder: (_) {
+//                return Text(
+//                  '${controller.counter}',
+//                  style: Theme.of(context).textTheme.headline4,
+//                );
+//              },
+//            ),
           ],
         ),
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          controller.increment();
         },
         child: Icon(Icons.add),
       ),

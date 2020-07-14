@@ -3,17 +3,40 @@ part 'controller.g.dart';
 
 class Controller = ControllerBase with _$Controller;
 
-// Gerando Código Automático
-abstract class ControllerBase with Store{
+abstract class ControllerBase with Store {
   @observable
-  int counter = 0;
+  String name = '';
+
+  @observable
+  String lastName = '';
+
+  @computed
+  String get completedName => '$name $lastName';
 
   @action
-  increment() {
-    counter++;
+  changeName(String newName) {
+    name = newName;
   }
+
+  @action
+  changeLastName(String newName) {
+    lastName = newName;
+  }
+
+
 }
 
+//// Gerando Código Automático (flutter pub run build_runner build)
+//abstract class ControllerBase with Store{
+//  @observable
+//  int counter = 0;
+//
+//  @action
+//  increment() {
+//    counter++;
+//  }
+//}
+//
 
 // Gerando Código Manual
 //class Controller{
