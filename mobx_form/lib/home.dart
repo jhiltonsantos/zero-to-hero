@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
+import 'package:provider/provider.dart';
 
+import 'body.dart';
 import 'controller/controller.dart';
 
 class MyHomePage extends StatefulWidget {
@@ -13,72 +15,20 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  final controller = Controller();
-
-  _textField({String labelText, onChanged, String Function() errorText}) {
-    return TextField(
-      onChanged: onChanged,
-      decoration: InputDecoration(
-        border: OutlineInputBorder(),
-        labelText: labelText,
-        errorText: errorText == null ? null : errorText(),
-      ),
-    );
-  }
-
   @override
   Widget build(BuildContext context) {
+    final controller = Provider.of<Controller>(context); // Forma com Provider
+    // final controller = Controller(); //Forma Normal
+
     return Scaffold(
       appBar: AppBar(
-        title: Text("Formulário"),
+        title: Observer(builder: (_) {
+          return Text(controller.isValidSave
+              ? 'Formulário Validado'
+              : 'Formulário Não Validado');
+        }),
       ),
-      body: Padding(
-        padding: EdgeInsets.all(8.0),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: <Widget>[
-            Observer(
-              builder: (_) {
-                return _textField(
-                    labelText: 'Name',
-                    onChanged: controller.client.changedName,
-                    errorText: controller.validateName);
-              },
-            ),
-            SizedBox(
-              height: 20.0,
-            ),
-            Observer(
-              builder: (_) {
-                return _textField(
-                    labelText: 'Email',
-                    onChanged: controller.client.changedEmail,
-                    errorText: controller.validateEmail);
-              },
-            ),
-            SizedBox(
-              height: 20.0,
-            ),
-            Observer(
-              builder: (_) {
-                return _textField(
-                    labelText: 'CPF',
-                    onChanged: controller.client.changedCpf,
-                    errorText: controller.validateCpf);
-              },
-            ),
-            SizedBox(
-              height: 20.0,
-            ),
-            Observer(builder: (_) {
-              return RaisedButton(
-                onPressed: controller.isValidSave ? () {} : null,
-                child: Text('Save'),
-              );
-            }),
-          ],
-        ),
-      ),
+      body: BodyWidget(),
     );
   }
 }

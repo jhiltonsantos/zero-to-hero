@@ -32,11 +32,13 @@ abstract class _ControllerBase with Store {
   }
 
   String validateCpf() {
-    if (client.email == null || client.email.isEmpty) {
+    if (client.cpf == null || client.cpf.isEmpty) {
       return 'Campo obrigatório';
-    } else if (!client.email.contains("@")) {
-      return 'Email não válido';
     }
     return null;
+  }
+
+  disposeApp() {
+
   }
 }
