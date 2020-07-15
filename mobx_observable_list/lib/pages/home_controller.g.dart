@@ -17,21 +17,6 @@ mixin _$HomeController on _HomeControllerBase, Store {
               name: '_HomeControllerBase.totalChecked'))
           .value;
 
-  final _$listItemsAtom = Atom(name: '_HomeControllerBase.listItems');
-
-  @override
-  ObservableList<ItemModel> get listItems {
-    _$listItemsAtom.reportRead();
-    return super.listItems;
-  }
-
-  @override
-  set listItems(ObservableList<ItemModel> value) {
-    _$listItemsAtom.reportWrite(value, super.listItems, () {
-      super.listItems = value;
-    });
-  }
-
   final _$_HomeControllerBaseActionController =
       ActionController(name: '_HomeControllerBase');
 
@@ -60,7 +45,6 @@ mixin _$HomeController on _HomeControllerBase, Store {
   @override
   String toString() {
     return '''
-listItems: ${listItems},
 totalChecked: ${totalChecked}
     ''';
   }

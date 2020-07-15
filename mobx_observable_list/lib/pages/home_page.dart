@@ -27,6 +27,7 @@ class _MyHomePageState extends State<MyHomePage> {
     return Scaffold(
       appBar: AppBar(
         title: TextField(
+          onChanged: controller.setFilter,
           decoration: InputDecoration(hintText: 'Search...'),
         ),
         actions: <Widget>[
@@ -41,23 +42,24 @@ class _MyHomePageState extends State<MyHomePage> {
         ],
       ),
       body: Observer(builder: (_) {
+        if (controller.output.data == null) {
+          return Center(child: CircularProgressIndicator());
+        }
         return ListView.builder(
+          // itemCount: controller.listFiltered.length,
+          itemCount: controller.output.data.length,
           itemBuilder: (_, index) {
             return ItemWidget(
-              item: controller.listItems[index],
+              item: controller.output.data[index],
               removeItem: () {
-                controller.removeItem(controller.listItems[index]);
+                controller.removeItem(controller.output.data[index]);
               },
             );
           },
-          itemCount: controller.listItems.length,
         );
       }),
       floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          _dialog();
-        },
-        tooltip: 'Increment',
+        onPressed: () => _dialog(),
         child: Icon(Icons.add),
       ),
     );
