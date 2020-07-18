@@ -7,7 +7,7 @@ class PokeRepository {
   PokeRepository(this.dio);
 
   Future<List<PokemonModel>> getCatchAll () async {
-    var response = await dio.get('/pokemon');
+    var response = await dio.get('pokemon?limit=964&offset=0');
     List<PokemonModel> list = [];
     for (var poke in (response.data['results']) as List) {
       PokemonModel model = PokemonModel(name: poke['name']);
