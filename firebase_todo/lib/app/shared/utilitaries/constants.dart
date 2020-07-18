@@ -1,0 +1,1 @@
+const String URL_POKEAPI = 'https://pokeapi.co/api/v2/';
