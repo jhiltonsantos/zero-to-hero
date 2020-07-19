@@ -10,8 +10,7 @@ class HomePage extends StatefulWidget {
   _HomePageState createState() => _HomePageState();
 }
 
-class _HomePageState extends State<HomePage> {
-  final homeController = Modular.get<HomeController>();
+class _HomePageState extends ModularState<HomePage, HomeController> {
 
   @override
   Widget build(BuildContext context) {
@@ -21,23 +20,23 @@ class _HomePageState extends State<HomePage> {
       ),
       body: Observer(
         builder: (_) {
-          if (homeController.pokemonList.error != null) {
+          if (controller.pokemonList.error != null) {
             return Center(
               child: RaisedButton(
                 child: Text('Pressione Novamente...'), onPressed: () {
-                homeController.fetchPokemon();
+                controller.fetchPokemon();
               },
               ),
             );
           }
 
-          if (homeController.pokemonList.value == null) {
+          if (controller.pokemonList.value == null) {
             return Center(
               child: CircularProgressIndicator(),
             );
           }
 
-          var list = homeController.pokemonList.value;
+          var list = controller.pokemonList.value;
           return ListView.builder(
               itemCount: list.length,
               itemBuilder: (BuildContext context, int index) {
