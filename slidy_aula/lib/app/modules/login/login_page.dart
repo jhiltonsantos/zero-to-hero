@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
+
 import 'login_controller.dart';
 
 class LoginPage extends StatefulWidget {
@@ -20,7 +21,12 @@ class _LoginPageState extends ModularState<LoginPage, LoginController> {
         title: Text(widget.title),
       ),
       body: Column(
-        children: <Widget>[],
+        children: <Widget>[
+          RaisedButton(
+            onPressed: controller.loginWithGooglePage,
+            child: Text('Login com Google'),
+          ),
+        ],
       ),
     );
   }

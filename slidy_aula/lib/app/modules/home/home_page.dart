@@ -16,6 +16,10 @@ class _HomePageState extends ModularState<HomePage, HomeController> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        leading: IconButton(
+          icon: Icon(Icons.cancel),
+      onPressed: () => controller.logOff(),
+    ),
         title: Text('Poke List'),
       ),
       body: Observer(
