@@ -20,4 +20,8 @@ abstract class _HomeControllerBase with Store {
     pokemonList = repository.getCatchAll().asObservable();
   }
 
+  @action
+  void save() {
+  }
+
 }
