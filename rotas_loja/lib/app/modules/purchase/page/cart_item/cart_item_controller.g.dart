@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'produto_controller.dart';
+part of 'cart_item_controller.dart';
 
 // **************************************************************************
 // StoreGenerator
@@ -8,8 +8,8 @@ part of 'produto_controller.dart';
 
 // ignore_for_file: non_constant_identifier_names, unnecessary_brace_in_string_interps, unnecessary_lambdas, prefer_expression_function_bodies, lines_longer_than_80_chars, avoid_as, avoid_annotating_with_dynamic
 
-mixin _$ProdutoController on _ProdutoControllerBase, Store {
-  final _$valueAtom = Atom(name: '_ProdutoControllerBase.value');
+mixin _$CartItemController on _CartItemControllerBase, Store {
+  final _$valueAtom = Atom(name: '_CartItemControllerBase.value');
 
   @override
   int get value {
@@ -24,17 +24,17 @@ mixin _$ProdutoController on _ProdutoControllerBase, Store {
     });
   }
 
-  final _$_ProdutoControllerBaseActionController =
-      ActionController(name: '_ProdutoControllerBase');
+  final _$_CartItemControllerBaseActionController =
+      ActionController(name: '_CartItemControllerBase');
 
   @override
   void increment() {
-    final _$actionInfo = _$_ProdutoControllerBaseActionController.startAction(
-        name: '_ProdutoControllerBase.increment');
+    final _$actionInfo = _$_CartItemControllerBaseActionController.startAction(
+        name: '_CartItemControllerBase.increment');
     try {
       return super.increment();
     } finally {
-      _$_ProdutoControllerBaseActionController.endAction(_$actionInfo);
+      _$_CartItemControllerBaseActionController.endAction(_$actionInfo);
     }
   }
 

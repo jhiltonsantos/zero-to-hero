@@ -1,9 +1,11 @@
-import 'package:rotas_loja/app/modules/loja/loja_module.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_modular/flutter_modular.dart';
+import 'package:rotas_loja/app/app_widget.dart';
+import 'package:rotas_loja/app/modules/product/product_module.dart';
+import 'package:rotas_loja/app/modules/purchase/purchase_module.dart';
+import 'package:rotas_loja/app/modules/shop/shop_module.dart';
 
 import 'app_controller.dart';
-import 'package:flutter_modular/flutter_modular.dart';
-import 'package:flutter/material.dart';
-import 'package:rotas_loja/app/app_widget.dart';
 
 class AppModule extends MainModule {
   @override
@@ -13,7 +15,9 @@ class AppModule extends MainModule {
 
   @override
   List<Router> get routers => [
-        Router(Modular.initialRoute, module: LojaModule()),
+        Router(Modular.initialRoute, module: ShopModule()),
+        Router('/purchase', module: PurchaseModule()),
+        Router('/product', module: ProductModule()),
       ];
 
   @override

@@ -1,16 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
-import 'produto_controller.dart';
+import 'cart_item_controller.dart';
 
-class ProdutoPage extends StatefulWidget {
+class CartItemPage extends StatefulWidget {
   final String title;
-  const ProdutoPage({Key key, this.title = "Produto"}) : super(key: key);
+  const CartItemPage({Key key, @required this.title}) : super(key: key);
 
   @override
-  _ProdutoPageState createState() => _ProdutoPageState();
+  _CartItemPageState createState() => _CartItemPageState();
 }
 
-class _ProdutoPageState extends ModularState<ProdutoPage, ProdutoController> {
+class _CartItemPageState
+    extends ModularState<CartItemPage, CartItemController> {
   //use 'controller' variable to access controller
 
   @override

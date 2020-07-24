@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'compra_controller.dart';
+part of 'product_controller.dart';
 
 // **************************************************************************
 // StoreGenerator
@@ -8,8 +8,8 @@ part of 'compra_controller.dart';
 
 // ignore_for_file: non_constant_identifier_names, unnecessary_brace_in_string_interps, unnecessary_lambdas, prefer_expression_function_bodies, lines_longer_than_80_chars, avoid_as, avoid_annotating_with_dynamic
 
-mixin _$CompraController on _CompraControllerBase, Store {
-  final _$valueAtom = Atom(name: '_CompraControllerBase.value');
+mixin _$ProductController on _ProductControllerBase, Store {
+  final _$valueAtom = Atom(name: '_ProductControllerBase.value');
 
   @override
   int get value {
@@ -24,17 +24,17 @@ mixin _$CompraController on _CompraControllerBase, Store {
     });
   }
 
-  final _$_CompraControllerBaseActionController =
-      ActionController(name: '_CompraControllerBase');
+  final _$_ProductControllerBaseActionController =
+      ActionController(name: '_ProductControllerBase');
 
   @override
   void increment() {
-    final _$actionInfo = _$_CompraControllerBaseActionController.startAction(
-        name: '_CompraControllerBase.increment');
+    final _$actionInfo = _$_ProductControllerBaseActionController.startAction(
+        name: '_ProductControllerBase.increment');
     try {
       return super.increment();
     } finally {
-      _$_CompraControllerBaseActionController.endAction(_$actionInfo);
+      _$_ProductControllerBaseActionController.endAction(_$actionInfo);
     }
   }
 
