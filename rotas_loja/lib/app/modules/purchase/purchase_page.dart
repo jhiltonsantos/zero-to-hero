@@ -76,6 +76,19 @@ class _PurchasePageState
                         fontWeight: FontWeight.bold,
                       ),
                     ),
+                  ),
+                  Container(
+                    margin: EdgeInsets.symmetric(horizontal: 30.0, vertical: 20.0),
+                    child: RaisedButton(
+                      child: Text('Adicionar ao Carrinho'),
+                      elevation: 8.0,
+                      onPressed: () {
+                        controller.addProductToCartItem(widget.productModel);
+                        Modular.link.popAndPushNamed('/purchase/cart_item/Purchase -> Cart Item');
+                      },
+
+
+                    ),
                   )
                 ],
               ),

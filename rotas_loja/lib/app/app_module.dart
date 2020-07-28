@@ -4,13 +4,16 @@ import 'package:rotas_loja/app/app_widget.dart';
 import 'package:rotas_loja/app/modules/product/product_module.dart';
 import 'package:rotas_loja/app/modules/purchase/purchase_module.dart';
 import 'package:rotas_loja/app/modules/shop/shop_module.dart';
+import 'package:rotas_loja/app/shared/stores/cart_item/cart_item_store.dart';
 
 import 'app_controller.dart';
 
 class AppModule extends MainModule {
   @override
-  List<Bind> get binds => [
+  List<Bind> get binds =>
+      [
         Bind((i) => AppController()),
+        Bind((i) => CartItemStore()),
       ];
 
   @override
