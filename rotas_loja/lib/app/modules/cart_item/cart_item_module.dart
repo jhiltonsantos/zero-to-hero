@@ -1,5 +1,5 @@
 import 'package:flutter_modular/flutter_modular.dart';
-import 'package:rotas_loja/app/shared/stores/cart_item/cart_item_store.dart';
+import 'package:rotas_loja/app/shared/stores/cart_item_store/cart_item_store.dart';
 
 import 'cart_item_controller.dart';
 import 'cart_item_page.dart';

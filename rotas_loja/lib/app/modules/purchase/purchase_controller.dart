@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:mobx/mobx.dart';
-import 'package:rotas_loja/app/shared/stores/cart_item/cart_item_store.dart';
+import 'package:rotas_loja/app/shared/stores/cart_item_store/cart_item_store.dart';
+
 
 part 'purchase_controller.g.dart';
 
