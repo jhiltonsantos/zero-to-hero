@@ -33,7 +33,7 @@ class _DataAddressPageState
           Container(
             width: double.infinity,
             child: RaisedButton(
-              child: Text('Continuar Comprando'),
+              child: Text('Continuar'),
               onPressed: () {
                 Modular.to.popUntil(ModalRoute.withName('/'));
               },

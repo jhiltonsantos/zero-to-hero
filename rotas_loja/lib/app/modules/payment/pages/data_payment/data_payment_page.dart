@@ -24,7 +24,23 @@ class _DataPaymentPageState extends ModularState<
       appBar: AppBar(
         title: Text(widget.title),
       ),
-      body: Container(),
+      body: Column(
+        children: <Widget>[
+          Text(
+            'Dados de Pagemento',
+            textAlign: TextAlign.center,
+          ),
+          Container(
+            width: double.infinity,
+            child: RaisedButton(
+              child: Text('Continuar'),
+              onPressed: () {
+                Modular.to.popUntil(ModalRoute.withName('/'));
+              },
+            ),
+          )
+        ],
+      ),
     );
   }
 }

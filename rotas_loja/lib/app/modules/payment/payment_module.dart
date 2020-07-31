@@ -1,14 +1,13 @@
-
-import 'payment_controller.dart';
 import 'package:flutter_modular/flutter_modular.dart';
-import 'package:dio/dio.dart';
+import 'payment_controller.dart';
 import 'payment_page.dart';
+import 'store/payment_store.dart';
 
 class PaymentModule extends ChildModule {
   @override
   List<Bind> get binds => [
-
         Bind((i) => PaymentController()),
+        Bind((i) => PaymentStore()),
       ];
 
   @override
