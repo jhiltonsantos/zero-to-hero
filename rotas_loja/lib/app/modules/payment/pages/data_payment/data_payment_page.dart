@@ -26,10 +26,6 @@ class _DataPaymentPageState extends ModularState<
       ),
       body: Column(
         children: <Widget>[
-          Text(
-            'Dados de Pagemento',
-            textAlign: TextAlign.center,
-          ),
           Container(
             width: double.infinity,
             child: RaisedButton(
