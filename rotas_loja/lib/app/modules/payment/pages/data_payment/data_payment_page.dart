@@ -31,7 +31,6 @@ class _DataPaymentPageState extends ModularState<
             child: RaisedButton(
               child: Text('Continuar'),
               onPressed: () {
-                Modular.to.popUntil(ModalRoute.withName('/'));
               },
             ),
           )
