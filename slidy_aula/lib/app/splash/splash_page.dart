@@ -18,7 +18,7 @@ class _SplashPageState extends State<SplashPage> {
       final auth = Modular.get<AuthController>();
       if (auth.status == AuthStatus.login) {
         Modular.to.pushReplacementNamed('/home');
-      } else if (auth.status == AuthStatus.logout){
+      } else if (auth.status == AuthStatus.logout) {
         Modular.to.pushReplacementNamed('/login');
       }
     });
@@ -34,7 +34,7 @@ class _SplashPageState extends State<SplashPage> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: Text('Splash'),
+          title: Text(),
         ),
         body: Center(
           child: CircularProgressIndicator(),
