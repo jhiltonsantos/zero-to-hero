@@ -5,7 +5,6 @@ import 'package:provider/provider.dart';
 import 'controller/controller.dart';
 
 class BodyWidget extends StatelessWidget {
-
   _textField({String labelText, onChanged, String Function() errorText}) {
     return TextField(
       onChanged: onChanged,
@@ -30,7 +29,7 @@ class BodyWidget extends StatelessWidget {
             child: Observer(
               builder: (_) {
                 return _textField(
-                    labelText: 'Name',
+                    labelText: 'Names',
                     onChanged: controller.client.changedName,
                     errorText: controller.validateName);
               },
